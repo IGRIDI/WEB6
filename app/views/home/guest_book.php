@@ -26,6 +26,7 @@
                 <li><a id="Connection" href="/contacts" onmouseover="setBackground('Connection')" onmouseout="restore('Connection')">Связь со мной</a></li>
                 <li><a id="Test" href="/test" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
                 <li><a id="Guest" href="/guest_book" onmouseover="setBackground('Guest')" onmouseout="restore('Guest_book')">Гостевая книга</a></li>
+                <li><a id="Blog" href="/blog" onmouseover="setBackground('Blog')" onmouseout="restore('Blog')">Блог</a></li>
                 <li class="last"><a id="History" href="/history" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
             </ul>
             <div class="mainMenu navigation" id ="inter">
@@ -63,11 +64,26 @@
             <h3>Отзывы пользователей</h3>
             <table border="1" class="educationTable">
                 <tr>
+                    <th>№</th>
                     <th>ФИО</th>
                     <th>Email</th>
                     <th>Текст отзыва</th>
                     <th>Дата</th>
                 </tr>
+                <tbody>
+                <?php
+                $number = 1;
+                foreach($args["reviews"] as $model) {
+                    echo '<tr>';
+                    echo '<td>' . $number++ . '</td>';
+                    echo '<td>' . $model->Fio . '</td>';
+                    echo '<td>' . $model->Email . '</td>';
+                    echo '<td><p style="word-wrap: normal">' . $model->Review . '</p></td>';
+                    echo '<td>' . $model->Date . '</td>';
+                    echo '</tr>';
+                }
+                ?>
+                </tbody>
             </table>
         </section>
 

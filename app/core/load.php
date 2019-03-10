@@ -6,12 +6,12 @@ require APP_PATH . 'app/core/TestVerification.php';
 require APP_PATH . 'app/core/Controller.php';
 require APP_PATH . 'app/core/View.php';
 
+require APP_PATH . 'app/controllers/Home.php';
 //6 LR
 require APP_PATH . 'app/core/Database.php';
 require APP_PATH . 'app/core/BaseActiveRecord.php';
 // Models
+require APP_PATH . 'app/models/BlogModel.php';
 require APP_PATH . 'app/models/TestsModel.php';
 require APP_PATH . 'app/models/ReviewModel.php';
-require APP_PATH . 'app/models/BlogModel.php';
 
-require APP_PATH . 'app/controllers/Home.php';

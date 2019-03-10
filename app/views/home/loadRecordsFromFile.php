@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Персональный сайт Герцовской Карины. Главная страница.</title>
+    <title>Персональный сайт Герцовской Карины. Страницв загрузки файла.</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <script src="/script/onMenuHoverBackgr.js"></script>
     <script src="/script/sessionStorageHistory.js"></script>
@@ -19,10 +19,12 @@
         <section>
             <h2>Вы попали на страницу загрузки файла гостевой книги <br>выберите файл</h2>
         </section>
+        <form enctype="multipart/form-data" class="form-horizontal" method="post">
+
         <input class="fileButton" type="file" accept=".inc" name="records" id="form_file">
-        <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
-        <input type="reset" name="reset" class="reset" value="Сбросить" form="contacts" onclick="location.reload()">
-        
+        <input type="submit" value="Отправить">
+        <input type="reset"  value="Сбросить">
+        </form>
         <a class="loadRecordsBtn" href="/guest_book" role="button">Назад</a>
 
     </div>
