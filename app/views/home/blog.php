@@ -39,14 +39,12 @@
             $a = 1;
             $b = 0;
             echo "<div class='pull-right'>";
-            for( $i = 1; $i <= $args["countPages"]; $i++ ) {
+            for( $i = 0; $i < $args["countPages"]; $i++ ) {
                 $b += 10;
-                $index = $i-1;
-                if($i-1 == $args["page"]) {
-                    echo "<a class='pagesBtn' href='?page=$i' role='button'>$a-$b</a>";
+                if($i == $args["page"]) {
+                    echo "<a class='pagesBtn' href='/blog?page=$i' role='button'>$a-$b</a>";
                 } else {
-
-                    echo "<a class='pagesBtn pagesBtnPrime' href='?page=$i' role='button'>$a-$b</a>";
+                    echo "<a class='pagesBtn pagesBtnPrime' href='/blog?page=$i' role='button'>$a-$b</a>";
                 }
                 $a += 10;
             }
