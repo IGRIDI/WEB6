@@ -8,7 +8,7 @@
     <script src="/script/sessionStorageHistory.js"></script>
     <script src="/script/globalHistory.js"></script>
 </head>
-<body onload="sessionStorageHistory('Гостевая книга'); setCookie('Гостевая книга', 0)">
+<body onload="sessionStorageHistory('Гостевая книга'); setCookie('Гостевая книга')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>
@@ -18,14 +18,14 @@
         </header>
         <nav>
             <ul class="mainMenu">
-                <li class="active"><a id="MainPage" href="/">Главная</a></li>
+                <li><a id="MainPage" href="/">Главная</a></li>
                 <li><a id="AboutMe" href="/aboutMe" onmouseover="setBackground('AboutMe')" onmouseout="restore('AboutMe')">Обо мне</a></li>
                 <li><a onclick = "showList()" id="myInterests" href="#" onmouseover="setBackground('myInterests')" onmouseout="restore('myInterests')">Мои интересы</a></li>
                 <li><a id="Photoalbum" href="/photoalbum" onmouseover="setBackground('Photoalbum')" onmouseout="restore('Photoalbum')">Мой фотоальбом</a></li>
                 <li><a id="Education" href="/education" onmouseover="setBackground('Education')" onmouseout="restore('Education')">Образование</a></li>
                 <li><a id="Connection" href="/contacts" onmouseover="setBackground('Connection')" onmouseout="restore('Connection')">Связь со мной</a></li>
                 <li><a id="Test" href="/test" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
-                <li><a id="Guest" href="/guest_book" onmouseover="setBackground('Guest')" onmouseout="restore('Guest_book')">Гостевая книга</a></li>
+                <li class="active"><a id="Guest" href="/guest_book" onmouseover="setBackground('Guest')" onmouseout="restore('Guest_book')">Гостевая книга</a></li>
                 <li><a id="Blog" href="/blog" onmouseover="setBackground('Blog')" onmouseout="restore('Blog')">Блог</a></li>
                 <li class="last"><a id="History" href="/history" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
             </ul>
@@ -34,7 +34,7 @@
             </div>
         </nav>
         <section>
-            <form id="contacts" method="post" onchange="<?Validation::validate()?>" name="contactsForm" role="form">
+            <form id="contacts" method="post">
                 <!--                onchange="checkedForm()"-->
                 <h3>Для добавления отзыва заполните форму.</h3>
                 <p>Ваше ФИО:<br>
@@ -55,8 +55,8 @@
                 <p>Оставьте свой отзыв:<br>
                     <textarea id="question" name="question" data-tooltip-message="Текст отзыва" placeholder="Текст отзыва"></textarea>
                 </p>
-                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
-                <input type="reset" name="reset" class="reset" value="Сбросить" form="contacts" onclick="location.reload()">
+                <input type="submit" name="submit" class="submit" form="contacts" id="submit" disabled value="Отправить">
+                <input type="reset" id="reset" name="reset" class="reset" value="Сбросить">
             </form>
 
             <a class="loadRecordsBtn" href="/loadRecordsFromFile" role="button">Загрузить отзывы из файла</a>
@@ -94,7 +94,11 @@
         <p class="anchor1"><a href="#top">Наверх</a></p>
     </footer>
 </div>
-<script src="/script/jquery-3.3.1.min.js"></script>
+<script src="/script/jquery-3.2.0.js"></script>
+
+<!--<script src="/script/jquery-3.3.1.min.js"></script>-->
 <script src="/script/currentTime.js"></script>
+<script src="/script/guestBook.js"></script>
+<script src="/script/functions.js"></script>
 </body>
 </html>

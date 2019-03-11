@@ -123,8 +123,25 @@ class Home extends Controller
                 'answer2' => 'answer-two',
                 'answer3' => 'answer-three'
             ]);
+            if (empty($errors)) {
+                $model = new TestsModel();
+                $model->Fio = $_POST['FIO'];
+                $model->Group = $_POST['groups'];
+                $model->Answer1 = $_POST['answer1'];
+                $model->Answer2 = $_POST['answer2'];
+                $model->Answer3 = $_POST['answer3'];
+                $model->IsAnswer1 = empty($responses['answer1']);
+                $model->IsAnswer2 = empty($responses['answer2']);
+                $model->IsAnswer3 = empty($responses['answer3']);
+                $model->save();
+            }
         }
         $this->view->generate($this->className . 'test', compact('errors', 'responses'));
+    }
+
+    public function table() {
+        $models = TestsModel::getAll();
+        $this->view->generate($this->className . 'table', compact('models'));
     }
 
     public function history()
@@ -142,7 +159,6 @@ class Home extends Controller
         $records = BlogModel::paginate($page, $this->countRecords);
         $count = BlogModel::getCount();
         $countPages = round($count / $this->countRecords);
-
         $this->view->generate($this->className . 'blog', compact("records", "countPages", "page"));
     }
 

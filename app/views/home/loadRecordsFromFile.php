@@ -22,7 +22,7 @@
         <form enctype="multipart/form-data" class="form-horizontal" method="post">
 
         <input class="fileButton" type="file" accept=".inc" name="records" id="form_file">
-        <input type="submit" value="Отправить">
+        <input style="margin-left: 43%;" type="submit" value="Отправить">
         <input type="reset"  value="Сбросить">
         </form>
         <a class="loadRecordsBtn" href="/guest_book" role="button">Назад</a>

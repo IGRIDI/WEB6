@@ -8,7 +8,7 @@
     <script src="/script/sessionStorageHistory.js"></script>
     <script src="/script/globalHistory.js"></script>
 </head>
-<body onload="sessionStorageHistory('Гостевая книга'); setCookie('Гостевая книга', 0)">
+<body onload="sessionStorageHistory('Блог'); setCookie('Блог')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>
@@ -18,7 +18,7 @@
         </header>
         <nav>
             <ul class="mainMenu">
-                <li class="active"><a id="MainPage" href="/">Главная</a></li>
+                <li><a id="MainPage" href="/">Главная</a></li>
                 <li><a id="AboutMe" href="/aboutMe" onmouseover="setBackground('AboutMe')" onmouseout="restore('AboutMe')">Обо мне</a></li>
                 <li><a onclick = "showList()" id="myInterests" href="#" onmouseover="setBackground('myInterests')" onmouseout="restore('myInterests')">Мои интересы</a></li>
                 <li><a id="Photoalbum" href="/photoalbum" onmouseover="setBackground('Photoalbum')" onmouseout="restore('Photoalbum')">Мой фотоальбом</a></li>
@@ -26,7 +26,7 @@
                 <li><a id="Connection" href="/contacts" onmouseover="setBackground('Connection')" onmouseout="restore('Connection')">Связь со мной</a></li>
                 <li><a id="Test" href="/test" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
                 <li><a id="Guest" href="/guest_book" onmouseover="setBackground('Guest')" onmouseout="restore('Guest_book')">Гостевая книга</a></li>
-                <li><a id="Blog" href="/blog" onmouseover="setBackground('Blog')" onmouseout="restore('Blog')">Блог</a></li>
+                <li class="active"><a id="Blog" href="/blog" onmouseover="setBackground('Blog')" onmouseout="restore('Blog')">Блог</a></li>
                 <li class="last"><a id="History" href="/history" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
             </ul>
             <div class="mainMenu navigation" id ="inter">
@@ -36,14 +36,19 @@
         <section>
             <a class="loadRecordsBtn" href="/editBlog" role="button">Редактор блога</a>
             <?php
+            $a = 1;
+            $b = 0;
             echo "<div class='pull-right'>";
-            for( $i = 0; $i < $args["countPages"]; $i++ ) {
-                $index = $i + 1;
-                if($i == $args["page"]) {
-                    echo "<a class='btn btn-default btn-primary' href='/blog?page=$i' role='button'>$index</a>";
+            for( $i = 1; $i <= $args["countPages"]; $i++ ) {
+                $b += 10;
+                $index = $i-1;
+                if($i-1 == $args["page"]) {
+                    echo "<a class='pagesBtn' href='?page=$i' role='button'>$a-$b</a>";
                 } else {
-                    echo "<a class='btn btn-default' href='/blog?page=$i' role='button'>$index</a>";
+
+                    echo "<a class='pagesBtn pagesBtnPrime' href='?page=$i' role='button'>$a-$b</a>";
                 }
+                $a += 10;
             }
             echo "</div>";
             foreach($args["records"] as $value) {
@@ -72,16 +77,6 @@
                 echo '</div>';
                 echo '</div>';
             }
-            echo "<div class='pull-right'>";
-            for( $i = 0; $i < $args["countPages"]; $i++ ) {
-                $index = $i + 1;
-                if($i == $args["page"]) {
-                    echo "<a class='btn btn-default btn-primary' href='/blog?page=$i' role='button'>$index</a>";
-                } else {
-                    echo "<a class='btn btn-default' href='/blog?page=$i' role='button'>$index</a>";
-                }
-            }
-            echo "</div>";
             ?>
         </section>
 

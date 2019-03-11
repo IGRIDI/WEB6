@@ -36,15 +36,17 @@
         </nav>
         <section>
             <h2>Тест по дисциплине "Безопасность жизнедеятельности"</h2>
-            <form id="tests" method="post" name="testForm">
+            <form id="tests" method="post" name="testForm" role = "form">
 <!--                  onsubmit="return checkTestData()"-->
                 <fieldset class="fSet1">
+                    <a class="btn btn-default" href="/table" role="button">Ответы студентов на тест</a>
+
                     <legend>Заполните все поля и дайте правильные ответы</legend>
                     <p>Ваше ФИО:<br>
-                        <input type="text" size="40" name="FIO" class="inputLength1" title="Фамилия Имя Отчество полностью" data-tooltip-message="Введите Фамилия Имя Отчество полностью" placeholder="Фамилия Имя Отчество полностью">
+                        <input type="text" id = "form_fio" size="40" name="FIO" class="inputLength1" title="Фамилия Имя Отчество полностью" data-tooltip-message="Введите Фамилия Имя Отчество полностью" placeholder="Фамилия Имя Отчество полностью">
                     </p>
                     <p>Ваша группа:<br>
-                        <select class="focusSelect2" name="groups" data-tooltip-message="Выберите группу, в которой Вы состоите">
+                        <select class="focusSelect2" name="groups" id="form_group" data-tooltip-message="Выберите группу, в которой Вы состоите">
                             <optgroup label="">
                                 <option disabled selected value="choice">Выберите свою группу</option>
                             </optgroup>
@@ -73,28 +75,28 @@
                         <legend>Вопрос №1</legend>
                         <p>Чрезвычайные ситуации техногенного характера (классификация, причины их возникновения, последствия,
                             ликвидация и действие населения на любом примере ЧС техногенного характера.<br>
-                            <textarea name="answer1" placeholder="Напишите свой ответ" data-tooltip-message="Напишите ответ. Не менее 30 слов"></textarea>
+                            <textarea name="answer1" id = "form_answer1" placeholder="Напишите свой ответ" data-tooltip-message="Напишите ответ. Не менее 30 слов"></textarea>
                         </p>
                     </fieldset>
                     <fieldset class="fSet3" title="Выберите один из вариантов">
                         <legend>Вопрос №2</legend>
                         <p class="focusP">Убежища малой вместительности:<br>
-                            <label data-tooltip-message="Выберите правильный ответ" for="ans0"><input id="ans0" type="radio" name="answer2" value="false">до 100 чел.<br></label>
-                            <label data-tooltip-message="Выберите правильный ответ" for="ans1"><input id="ans1" type="radio" name="answer2" value="true">до 600 чел.<br></label>
-                            <label data-tooltip-message="Выберите правильный ответ" for="ans2"><input id="ans2" type="radio" name="answer2" value="false">до 1000 чел.<br></label>
+                            <label data-tooltip-message="Выберите правильный ответ" for="ans0"><input id="ans0" type="radio" name="answer2"  value="до 100 чел">до 100 чел.<br></label>
+                            <label data-tooltip-message="Выберите правильный ответ" for="ans1"><input id="ans1" type="radio" name="answer2" value="до 600 чел">до 600 чел.<br></label>
+                            <label data-tooltip-message="Выберите правильный ответ" for="ans2"><input id="ans2" type="radio" name="answer2" value="до 1000 чел">до 1000 чел.<br></label>
                         </p>
                     </fieldset>
                     <fieldset class="fSet4" title="Выберите один из вариантов">
                         <legend>Вопрос №3</legend>
                         <p>Признаки отравления угарным газом?<br>
-                            <select data-tooltip-message="Выберите правильный ответ" class="focusSelect" size="1" name="answer3">
+                            <select data-tooltip-message="Выберите правильный ответ" id = "form_answer3" class="focusSelect" size="1" name="answer3">
                                 <option disabled selected>Выберите ответ</option>
-                                <option value="true">Слабость, тошнота, рвота, головокружение, покраснение кожных покровов</option>
-                                <option value="false">Слабость, головокружение, побледнение кожных покровов</option>
+                                <option value="Слабость, тошнота, рвота, головокружение, покраснение кожных покровов">Слабость, тошнота, рвота, головокружение, покраснение кожных покровов</option>
+                                <option value="Слабость, головокружение, побледнение кожных покровов">Слабость, головокружение, побледнение кожных покровов</option>
                             </select>
                         </p>
                     </fieldset>
-                    <input type="submit" name="submit" class="submit" form="tests">
+                    <input type="submit" id = "submit" name="submit" class="submit" form="tests">
                     <input type="reset" name="reset" class="reset" form="tests">
                 </fieldset>
             </form>

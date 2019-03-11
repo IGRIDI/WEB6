@@ -684,5 +684,107 @@ p.correct-responses {
 .fileButton{
     margin: 50px auto;
     display: block;
+}
 
+.blog-record {
+    display: block;
+    margin: 20px 0;
+    clear: both;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.blog-footer {
+    position: relative;
+    height: 40px;
+}
+
+.blog-footer > .blog-author {
+    position: absolute;
+    left: 0;
+    float: left;
+    top: 65%;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: #465477;
+    box-sizing: border-box;
+}
+
+.blog-footer > .blog-date {
+    position: absolute;
+    right: 0;
+    top: 65%;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: #445377;
+    box-sizing: border-box;
+}
+
+.blog-topic {
+    clear: both;
+    padding: 5px;
+    font-weight: 300;
+    line-height: 1.4;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #fff;
+    font-size: 21px;
+    background-color: #5775b7;
+    border-color: #6078a4;
+}
+
+.blog-content {
+    position: relative;
+    padding: 5px;
+}
+
+.blog-photo {
+    float: left;
+    width: 21%;
+    height: 60%;
+    padding: 5px;
+    margin-right: 30px;
+}
+
+.blog-message {
+    max-width: 100%;
+}
+
+.blog-photo > img.img-thumbnail {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.blog-message > p::first-letter {
+    margin-left: 2em;
+}
+
+.blog-message > p {
+    font-size: 16px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.thumbnail a>img,.thumbnail>img{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.thumbnail{display:block;padding:4px;margin-bottom:20px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:border .2s ease-in-out;-o-transition:border .2s ease-in-out;transition:border .2s ease-in-out}.thumbnail a>img,.thumbnail>img{margin-right:auto;margin-left:auto}a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover{border-color:#337ab7}.thumbnail .caption{padding:9px;color:#333}
+
+.pagesBtn {
+    display: inline-block ;
+    width: 50px;
+    color:black;
+    background: #8bb2f0;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom:  5px;
+    font-family: Arial, sans-serif;
+    margin: 10px auto;
+}
+.pagesBtnPrime {
+    text-decoration: underline;
+}
+.pagesBtn:hover{
+    background: #ffc8e7;
+}
+
+.clearfix {
+    clear: both;
 }

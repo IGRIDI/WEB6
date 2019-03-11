@@ -1,4 +1,4 @@
-var pages = ['Главная', 'Обо мне', 'Мои интересы', 'Мой фотоальбом', 'Образование', 'Связь со мной', 'Входное тестирование'];
+var pages = ['Главная', 'Обо мне', 'Мои интересы', 'Мой фотоальбом', 'Образование', 'Связь со мной', 'Входное тестирование', 'Гостевая книга', 'Блог'];
 
 
 function sessionStorageHistory(name) {
@@ -18,7 +18,7 @@ function getSessionStorage(key) {
 		document.write("<th>Страница:</th>");
 		document.write("<th>Количество посещений за текущий сеанс:</th>");
 	document.write("</tr>");
-	for (var i = 0; i < 7; i++) {
+	for (var i = 0; i < pages.length; i++) {
 		document.write("<tr>");
 		for (var j = 0; j < 2; j++) {
 			if (j===0) {

@@ -20,7 +20,7 @@
             <h2>Вы попали на страницу редактора блога <br>заполните форму</h2>
         </section>
         <a class="loadRecordsBtn" href="/blog" role="button">Блог</a>
-        <form enctype="multipart/form-data" id="contacts" method="post" onchange="<?Validation::validate()?>" >
+        <form enctype="multipart/form-data" id="contacts" method="post">
             <h3>Для добавления новой записи блога заполните форму</h3>
             <div class="radio">
                 <label>
@@ -41,7 +41,7 @@
                 <input type="text" class="form-control" name="author" id="form_author" placeholder="Автор">
             </p>
             <p>Изображение:<br>
-                <input type="file" accept=".png,.jpeg,.jpg" name="photo">
+                <input type="file" accept=".png,.jpeg,.jpg" name="photo" id="form_photo">
             </p>
             <p>Сообщение:<br>
                 <textarea class="form-control" name="message" id="form_message" rows="3" placeholder="Сообщение"></textarea>
@@ -49,7 +49,7 @@
             <p>Загрузка файла с записями:<br>
                 <input type="file" accept=".csv" name="records" id="form_file">
             </p>
-            <input type="submit" class="submit" value="Отправить">
+            <input type="submit" id = "submit" class="submit" value="Отправить">
             <input type="reset" class="reset" value="Сбросить" onclick="location.reload()">
             </form>
     </div>
@@ -59,7 +59,9 @@
         <p class="anchor1"><a href="#top">Наверх</a></p>
     </footer>
 </div>
-<script src="/script/jquery-3.3.1.min.js"></script>
+<script src="/script/jquery-3.2.0.js"></script>
+<script src="/script/functions.js"></script>
+<script src="/script/blogEdit.js"></script>
 <script src="/script/currentTime.js"></script>
 </body>
 </html>

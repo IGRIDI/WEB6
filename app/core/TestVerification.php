@@ -50,7 +50,7 @@ class TestVerification extends TestValidation
 
     protected function isTrueAnswerOne($field)
     {
-        if (count(explode(" ", $this->_form[$field])) >= 30) {
+        if (count(explode(" ", $this->_form[$field])) >= 3) {
             return true;
         }
         return false;
@@ -59,7 +59,7 @@ class TestVerification extends TestValidation
     protected function isTrueAnswerTwo($field)
     {
         if (!empty($this->_form[$field])) {
-            return $this->_form[$field] == 'true';
+            return strcmp($this->_form[$field], 'до 600 чел') == 0;
         }
         return false;
     }
@@ -67,7 +67,7 @@ class TestVerification extends TestValidation
     protected function isTrueAnswerThree($field)
     {
         if (!empty($this->_form[$field])) {
-            return $this->_form[$field] == 'true';
+            return strcmp($this->_form[$field], 'Слабость, тошнота, рвота, головокружение, покраснение кожных покровов') == 0;
         }
         return false;
     }
